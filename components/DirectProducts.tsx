@@ -22,7 +22,8 @@ const ProductIcon: React.FC<{ id: number; title: string }> = ({ id, title }) => 
         alt={title}
         className="w-full h-full object-contain"
         onError={(e) => {
-          (e.target as HTMLImageElement).src = `https://placehold.co/120x120/F3F4F6/94A3B8/png?text=${title}`;
+          e.currentTarget.onerror = null; // Prevent infinite loop if fallback fails
+          e.currentTarget.src = `https://placehold.co/120x120/F3F4F6/94A3B8/png?text=${encodeURIComponent(title)}`;
         }}
       />
     </div>

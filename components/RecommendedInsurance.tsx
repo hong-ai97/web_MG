@@ -21,12 +21,12 @@ const RecommendedInsurance: React.FC = () => {
                 부담 없는 보험료로<br />미래 준비하기
               </h3>
 
-              <p className="text-white/80 font-medium leading-relaxed text-sm break-keep">
+              <p className="text-white/80 font-medium leading-relaxed text-[15px] break-keep">
                 2030 세대를 위한 필수 보장만<br />모아 합리적으로 설계했어요
               </p>
             </div>
 
-            <button className="w-fit h-9 px-4 bg-white text-[#16AA6A] rounded-full font-bold text-xs shadow-sm mt-4 flex items-center justify-center gap-1 transition-all hover:bg-green-50">
+            <button className="w-fit h-9 px-4 bg-white text-[#16AA6A] rounded-full font-bold text-[14px] shadow-sm mt-4 flex items-center justify-center gap-1 transition-all hover:bg-green-50">
               지금 확인하기 <ChevronRight className="w-3 h-3" />
             </button>
           </div>
@@ -47,12 +47,12 @@ const RecommendedInsurance: React.FC = () => {
               <h3 className="text-2xl font-bold text-white mb-2 leading-tight break-keep">
                 온 가족 건강지킴이<br />종합 건강보험
               </h3>
-              <p className="text-white/80 font-medium leading-relaxed text-sm break-keep">
+              <p className="text-white/80 font-medium leading-relaxed text-[15px] break-keep">
                 병원비 걱정 없이<br />우리 가족의 건강을 지켜드려요
               </p>
             </div>
 
-            <button className="w-fit h-9 px-4 bg-white text-[#2FA4E8] rounded-full font-bold text-xs shadow-sm mt-4 flex items-center justify-center gap-1 transition-all hover:bg-blue-50">
+            <button className="w-fit h-9 px-4 bg-white text-[#2FA4E8] rounded-full font-bold text-[14px] shadow-sm mt-4 flex items-center justify-center gap-1 transition-all hover:bg-blue-50">
               지금 확인하기 <ChevronRight className="w-3 h-3" />
             </button>
           </div>
