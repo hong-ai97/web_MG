@@ -59,10 +59,10 @@ const HeroSection: React.FC = () => {
             </div>
           </ScrollReveal>
 
-          {/* Right: Login & Action - Delay 0.2s */}
+          {/* Right: Login & Action - Delay 0.1s */}
           <ScrollReveal
             className="lg:col-span-4 h-full"
-            delay={0.2}
+            delay={0.1}
             width="100%"
           >
             <div className="bg-white rounded-[32px] p-8 flex flex-col items-center justify-center relative shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 border border-gray-100/50 text-center h-full">
@@ -117,10 +117,10 @@ const HeroSection: React.FC = () => {
           </ScrollReveal>
         </div>
 
-        {/* Quick Menu Block - Delay 0.4s */}
+        {/* Quick Menu Block - Delay 0.2s */}
         <ScrollReveal
           className="relative -mt-0 z-10"
-          delay={0.4}
+          delay={0.2}
           width="100%"
         >
           <div className="bg-white rounded-[32px] p-6 lg:p-8 shadow-[0_15px_35px_rgba(0,0,0,0.06)] border border-gray-100/50 hover:border-blue-50 transition-colors">

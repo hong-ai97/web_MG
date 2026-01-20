@@ -1,6 +1,29 @@
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import { motion } from 'framer-motion';
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.05, // Faster stagger
+      delayChildren: 0.1,
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.22, 1, 0.36, 1]
+    }
+  }
+};
 
 const RecommendedInsurance: React.FC = () => {
   return (
@@ -10,9 +33,15 @@ const RecommendedInsurance: React.FC = () => {
         <p className="text-gray-500 font-medium">라이프스타일에 맞춘 최적의 상품을 제안합니다</p>
       </ScrollReveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2 gap-4"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={containerVariants}
+      >
         {/* Card 1: Future (Vibrant Green) */}
-        <ScrollReveal className="h-full">
+        <motion.div className="h-full" variants={itemVariants}>
           <div className="bg-[#16AA6A] rounded-[24px] pl-10 py-10 pr-[56px] relative overflow-hidden group transition-all hover:shadow-lg h-full">
             <div className="relative z-10 flex flex-col justify-between h-full min-h-[220px]">
               <div>
@@ -35,10 +64,10 @@ const RecommendedInsurance: React.FC = () => {
               <img src="/assets/Banner02.webp" alt="Future Icon" className="w-full h-full object-contain drop-shadow-sm opacity-100" />
             </div>
           </div>
-        </ScrollReveal>
+        </motion.div>
 
         {/* Card 2: Health (Vibrant Blue) */}
-        <ScrollReveal className="h-full" delay={0.1}>
+        <motion.div className="h-full" variants={itemVariants}>
           <div className="bg-[#2FA4E8] rounded-[24px] pl-10 py-10 pr-[56px] relative overflow-hidden group transition-all hover:shadow-lg h-full">
             <div className="relative z-10 flex flex-col justify-between h-full min-h-[220px]">
               <div>
@@ -60,8 +89,8 @@ const RecommendedInsurance: React.FC = () => {
               <img src="/assets/Banner01.webp" alt="Health Icon" className="w-full h-full object-contain drop-shadow-sm opacity-100" />
             </div>
           </div>
-        </ScrollReveal>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

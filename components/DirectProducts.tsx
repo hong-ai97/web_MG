@@ -3,6 +3,7 @@ import React, { useRef } from 'react';
 import { DIRECT_PRODUCTS } from '../constants';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import { motion } from 'framer-motion';
 
 const ProductIcon: React.FC<{ id: number; title: string }> = ({ id, title }) => {
   // Mapping provided IDs to the requested URLs
@@ -31,6 +32,28 @@ const ProductIcon: React.FC<{ id: number; title: string }> = ({ id, title }) => 
   );
 };
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.05, // Faster stagger as requested
+      delayChildren: 0.1, // Reduced initial delay
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.22, 1, 0.36, 1]
+    }
+  }
+};
+
 const DirectProducts: React.FC = () => {
   // Duplicate products to ensure we have at least 8 items for the carousel
   const products = [...DIRECT_PRODUCTS, ...DIRECT_PRODUCTS].map((p, i) => ({ ...p, id: i + 1, originalId: p.id })); // Ensure unique keys
@@ -50,7 +73,10 @@ const DirectProducts: React.FC = () => {
   return (
     <section className="max-w-[1280px] mx-auto px-4">
       {/* Section Header with Navigation UI */}
-      <ScrollReveal className="flex justify-between items-end mb-8 px-2">
+      <ScrollReveal
+        className="flex justify-between items-end mb-8 px-2"
+        viewport={{ once: true, amount: 0.8, margin: "0px 0px -20% 0px" }} // VERY Strict trigger: requires significant scrolling
+      >
         <div>
           <h2 className="text-3xl font-bold text-[#111111] tracking-tight mb-3">다이렉트 인기 상품</h2>
           <p className="text-gray-500 font-medium">합리적인 보험료로 든든하게 보장받으세요</p>
@@ -80,14 +106,19 @@ const DirectProducts: React.FC = () => {
 
       {/* Carousel Container */}
       <div className="overflow-hidden px-2 -mx-2 py-4 -my-4">
-        <div
+        <motion.div
           className="flex transition-transform duration-500 ease-in-out gap-3"
           style={{ transform: `translateX(-${currentIndex * 25}%)` }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3, margin: "0px 0px -20% 0px" }} // Also delayed grid
+          variants={containerVariants}
         >
-          {products.map((product, idx) => (
-            <ScrollReveal
+          {products.map((product) => (
+            <motion.div
+              layout // Helps with layout changes if any
               key={`${product.id}-${product.originalId}`}
-              delay={0.2 + (idx * 0.1)}
+              variants={itemVariants}
               className="min-w-[calc(25%-9px)] mb-2 group"
             >
               <div className="h-full bg-white rounded-[24px] p-7 flex flex-col justify-between hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-300 border border-gray-100">
@@ -114,9 +145,9 @@ const DirectProducts: React.FC = () => {
                   </button>
                 </div>
               </div>
-            </ScrollReveal>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

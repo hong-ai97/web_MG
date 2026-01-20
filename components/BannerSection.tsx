@@ -5,7 +5,7 @@ import ScrollReveal from './ScrollReveal';
 const BannerSection: React.FC = () => {
   return (
     <section className="max-w-[1280px] mx-auto px-4">
-      <ScrollReveal className="w-full">
+      <ScrollReveal className="w-full" delay={0.3}>
         <div className="relative rounded-[24px] overflow-hidden group cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.1)] transition-all duration-500 min-h-[320px] flex items-center">
           {/* Background Image */}
           <div className="absolute inset-0 z-0">

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { CATEGORIES } from '../constants';
 import { ArrowRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import { motion } from 'framer-motion';
 
 // Mock data generator for tab content
 const getMockProductsForCategory = (categoryId: number, categoryLabel: string) => {
@@ -37,6 +38,28 @@ const getMockProductsForCategory = (categoryId: number, categoryLabel: string) =
   ];
 
   return products;
+};
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.05, // Faster stagger
+      delayChildren: 0.1,
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.22, 1, 0.36, 1]
+    }
+  }
 };
 
 const CategoryGrid: React.FC = () => {
@@ -83,11 +106,18 @@ const CategoryGrid: React.FC = () => {
         </div>
       </ScrollReveal>
 
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+      {/* Grid Container with Shared Trigger */}
+      <motion.div
+        className="grid grid-cols-2 md:grid-cols-5 gap-3"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.15 }} // Slightly earlier than 0.2 because the grid is tall
+        variants={containerVariants}
+      >
         {activeProducts.map((product, idx) => (
-          <ScrollReveal
+          <motion.div
             key={idx}
-            delay={0.2 + (idx * 0.1)}
+            variants={itemVariants}
             className="group h-full min-h-[230px]"
           >
             <div className="bg-white rounded-[24px] p-6 pb-4 border border-transparent hover:border-blue-100 shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 cursor-pointer relative overflow-hidden flex flex-col justify-between h-full">
@@ -130,12 +160,12 @@ const CategoryGrid: React.FC = () => {
                 <p className="text-xs text-gray-400 font-normal border-t border-gray-100 pt-3">{product.price}</p>
               </div>
             </div>
-          </ScrollReveal>
+          </motion.div>
         ))}
 
         {/* 'See More' Card (10th Item) */}
-        <ScrollReveal
-          delay={0.2 + (activeProducts.length * 0.1)}
+        <motion.div
+          variants={itemVariants}
           className="h-full min-h-[230px] group"
         >
           <div className="h-full w-full bg-gray-50/50 rounded-[24px] border-2 border-dashed border-gray-200 hover:border-[#2FA5E9] hover:bg-blue-50/10 transition-all duration-300 cursor-pointer flex flex-col items-center justify-center gap-4">
@@ -149,8 +179,8 @@ const CategoryGrid: React.FC = () => {
               <span className="text-sm text-gray-500">전체보기</span>
             </div>
           </div>
-        </ScrollReveal>
-      </div>
+        </motion.div>
+      </motion.div>
     </section >
   );
 };
