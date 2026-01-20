@@ -9,7 +9,7 @@ const InfoSection: React.FC = () => {
       <ScrollReveal className="grid grid-cols-1 lg:grid-cols-12 gap-3">
 
         {/* Column 1: Notices & Utilities (Span 8) */}
-        <div className="lg:col-span-8 flex flex-col gap-3">
+        <ScrollReveal className="lg:col-span-8 flex flex-col gap-3" width="100%">
 
           {/* Notices Card */}
           <div className="bg-white rounded-[24px] p-8 shadow-[0_2px_10px_rgba(0,0,0,0.02)] border border-transparent hover:border-gray-100 transition-colors h-full">
@@ -61,10 +61,10 @@ const InfoSection: React.FC = () => {
               <span className="text-sm font-bold text-gray-700">서류안내</span>
             </a>
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Column 2: App Download (Span 4) */}
-        <div className="lg:col-span-4">
+        <ScrollReveal className="lg:col-span-4" width="100%" delay={0.1}>
           <div className="bg-[#2FA5E9] rounded-[24px] p-8 h-full min-h-[320px] flex flex-col relative overflow-hidden group shadow-lg shadow-blue-200/50 hover:shadow-blue-300/60 transition-shadow">
             <div className="z-10 text-white flex-1 flex flex-col">
               <div className="flex justify-between items-center mb-4 relative z-10">
@@ -97,7 +97,7 @@ const InfoSection: React.FC = () => {
             {/* Decorative Background */}
             <div className="absolute top-1/2 -right-12 w-48 h-48 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
           </div>
-        </div>
+        </ScrollReveal>
 
       </ScrollReveal>
     </section>

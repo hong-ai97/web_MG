@@ -1,10 +1,9 @@
 import React from 'react';
-import ScrollReveal from './ScrollReveal';
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-[#333333] text-gray-400 py-12 text-sm mt-[120px]">
-      <ScrollReveal className="max-w-[1280px] mx-auto px-4">
+      <div className="max-w-[1280px] mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8 border-b border-gray-700 pb-8">
           <ul className="flex flex-wrap gap-x-6 gap-y-2 font-medium text-gray-300">
             <li><a href="#" className="hover:text-white">개인정보처리방침</a></li>
@@ -36,7 +35,7 @@ const Footer: React.FC = () => {
             <img src="https://placehold.co/100x40/555/AAA/png?text=ISMS" alt="ISMS" className="opacity-50 grayscale hover:grayscale-0 transition-all" />
           </div>
         </div>
-      </ScrollReveal>
+      </div>
     </footer>
   );
 };
