@@ -15,8 +15,8 @@ const ProductIcon: React.FC<{ id: number; title: string }> = ({ id, title }) => 
   const src = imageUrls[id] || `https://placehold.co/120x120/F3F4F6/94A3B8/png?text=${title}`;
 
   return (
-    // Resized container to 104x104px (w-[104px] h-[104px])
-    <div className="w-[104px] h-[104px] flex items-center justify-center overflow-hidden bg-white shrink-0">
+    // Resized container to 96x96px (w-[96px] h-[96px])
+    <div className="w-[96px] h-[96px] flex items-center justify-center overflow-hidden bg-white shrink-0">
       <img
         src={src}
         alt={title}
@@ -48,9 +48,9 @@ const DirectProducts: React.FC = () => {
   return (
     <section className="max-w-[1280px] mx-auto px-4">
       {/* Section Header with Navigation UI */}
-      <div className="flex justify-between items-end mb-6 px-2">
+      <div className="flex justify-between items-end mb-8 px-2">
         <div>
-          <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight mb-2">다이렉트 인기 상품</h2>
+          <h2 className="text-3xl font-bold text-[#111111] tracking-tight mb-3">다이렉트 인기 상품</h2>
           <p className="text-gray-500 font-medium">합리적인 보험료로 든든하게 보장받으세요</p>
         </div>
 
@@ -91,24 +91,24 @@ const DirectProducts: React.FC = () => {
 
               {/* Text Content Area */}
               <div className="flex flex-col mb-6">
-                <h3 className="text-[22px] font-bold text-gray-900 mb-2 group-hover:text-[#2FA5E9] transition-colors leading-tight break-keep">
+                <h3 className="text-[20px] font-semibold text-[#111111] mb-2 group-hover:text-[#2FA5E9] transition-colors leading-tight break-keep">
                   {product.title}
                 </h3>
-                <p className="text-sm text-gray-500 font-medium leading-snug opacity-90 break-keep">
+                <p className="text-[15px] text-[#666666] font-medium leading-snug opacity-90 break-keep">
                   {product.description}
                 </p>
               </div>
 
-              {/* Icon Area: Space to footer is kept at 8px (mb-2) */}
-              <div className="flex justify-end mt-auto mb-2">
+              {/* Icon Area: Space to footer is kept at 12px (mb-3) */}
+              <div className="flex justify-end mt-auto mb-3">
                 <ProductIcon id={product.originalId} title={product.title} />
               </div>
 
               {/* Footer Area */}
-              <div className="pt-4 mt-auto">
-                <button className="w-full h-12 rounded-xl bg-[#EFF8FF] hover:bg-[#2FA5E9] hover:text-white flex items-center justify-center gap-2 text-[#2FA5E9] font-bold transition-all duration-300 group/btn shadow-sm hover:shadow-md">
+              <div>
+                <button className="w-full h-10 rounded-[8px] bg-[#EFF8FF] hover:bg-[#2FA5E9] hover:text-white flex items-center justify-center gap-2 text-[#2FA5E9] font-bold transition-all duration-300 group/btn shadow-sm hover:shadow-md">
                   <span className="text-[15px]">자세히 보기</span>
-                  <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                  <ChevronRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
                 </button>
               </div>
             </div>

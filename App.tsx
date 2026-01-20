@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="min-h-screen w-full flex flex-col bg-[#F5F7F9]">
       <Header />
-      <main className="flex-1 pb-24 pt-8 space-y-20">
+      <main className="flex-1 pb-24 pt-8 space-y-24">
         <HeroSection />
         <DirectProducts />
         <RecommendedInsurance />

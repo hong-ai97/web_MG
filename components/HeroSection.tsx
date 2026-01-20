@@ -81,7 +81,7 @@ const HeroSection: React.FC = () => {
             <div className="w-[80%] h-px bg-gray-100 mb-8"></div>
 
             <div className="w-full">
-              <h3 className="text-base md:text-lg font-bold text-[#666666] leading-snug mb-8">
+              <h3 className="text-base md:text-lg font-bold text-[#333333] leading-snug mb-8">
                 로그인 없이 이용 가능해요.
               </h3>
 
@@ -90,21 +90,21 @@ const HeroSection: React.FC = () => {
                   <div className="w-[52px] h-[52px] flex items-center justify-center">
                     <img src="/assets/login-icon-1.png" alt="개인정보동의" className="w-[52px] h-[52px] object-contain" />
                   </div>
-                  <span className="text-[14px] font-medium text-[#666666] group-hover:text-gray-900 transition-colors whitespace-nowrap">개인정보동의</span>
+                  <span className="text-[14px] font-medium text-[#333333] group-hover:text-gray-900 transition-colors whitespace-nowrap">개인정보동의</span>
                 </div>
 
                 <div className="flex flex-col items-center gap-2.5 group cursor-pointer w-24">
                   <div className="w-[52px] h-[52px] flex items-center justify-center">
                     <img src="/assets/login-icon-2.png" alt="보험증권 사서함" className="w-[52px] h-[52px] object-contain" />
                   </div>
-                  <span className="text-[14px] font-medium text-[#666666] group-hover:text-gray-900 transition-colors whitespace-nowrap">보험증권 사서함</span>
+                  <span className="text-[14px] font-medium text-[#333333] group-hover:text-gray-900 transition-colors whitespace-nowrap">보험증권 사서함</span>
                 </div>
 
                 <div className="flex flex-col items-center gap-2.5 group cursor-pointer w-24">
                   <div className="w-[52px] h-[52px] flex items-center justify-center">
                     <img src="/assets/login-icon-3.png" alt="증권 발급 확인" className="w-[52px] h-[52px] object-contain" />
                   </div>
-                  <span className="text-[14px] font-medium text-[#666666] group-hover:text-gray-900 transition-colors whitespace-nowrap">증권 발급 확인</span>
+                  <span className="text-[14px] font-medium text-[#333333] group-hover:text-gray-900 transition-colors whitespace-nowrap">증권 발급 확인</span>
                 </div>
               </div>
             </div>

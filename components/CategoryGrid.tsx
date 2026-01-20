@@ -48,8 +48,8 @@ const CategoryGrid: React.FC = () => {
 
   return (
     <section className="max-w-[1280px] mx-auto px-4">
-      <div className="mb-6 px-1">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 tracking-tight">모든 상품을 한눈에</h2>
+      <div className="mb-8 px-1">
+        <h2 className="text-2xl md:text-3xl font-bold text-[#111111] mb-3 tracking-tight">모든 상품을 한눈에</h2>
         <p className="text-gray-500 font-medium">원하시는 상품의 카테고리를 선택해보세요.</p>
       </div>
 
