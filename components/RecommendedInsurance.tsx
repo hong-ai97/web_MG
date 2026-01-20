@@ -11,7 +11,7 @@ const RecommendedInsurance: React.FC = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Card 1: Future (Vibrant Green) - Swapped Content */}
-        <div className="bg-[#16AA6A] rounded-[24px] pl-10 py-10 pr-[56px] relative overflow-hidden group transition-all hover:shadow-lg hover:-translate-y-1">
+        <div className="bg-[#16AA6A] rounded-[24px] pl-10 py-10 pr-[56px] relative overflow-hidden group transition-all hover:shadow-lg">
           <div className="relative z-10 flex flex-col justify-between h-full min-h-[220px]">
             <div>
               {/* Tag */}
@@ -32,13 +32,13 @@ const RecommendedInsurance: React.FC = () => {
           </div>
 
           {/* Icon - Center Right */}
-          <div className="absolute right-[56px] top-1/2 -translate-y-1/2 w-[160px] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-1">
-            <img src="/assets/images/icon_sprout_umbrella.png" alt="Future Icon" className="w-full object-contain drop-shadow-sm opacity-95" />
+          <div className="absolute right-[56px] top-1/2 -translate-y-1/2 w-[200px] h-[200px] flex items-center justify-center transition-transform duration-500 group-hover:scale-105 group-hover:rotate-1">
+            <img src="/assets/Banner02.webp" alt="Future Icon" className="w-full h-full object-contain drop-shadow-sm opacity-100" />
           </div>
         </div>
 
         {/* Card 2: Health (Vibrant Blue) - Swapped Content */}
-        <div className="bg-[#2FA4E8] rounded-[24px] pl-10 py-10 pr-[56px] relative overflow-hidden group transition-all hover:shadow-lg hover:-translate-y-1">
+        <div className="bg-[#2FA4E8] rounded-[24px] pl-10 py-10 pr-[56px] relative overflow-hidden group transition-all hover:shadow-lg">
           <div className="relative z-10 flex flex-col justify-between h-full min-h-[220px]">
             <div>
               {/* Tag */}
@@ -58,8 +58,8 @@ const RecommendedInsurance: React.FC = () => {
           </div>
 
           {/* Icon - Center Right */}
-          <div className="absolute right-[56px] top-1/2 -translate-y-1/2 w-[160px] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-1">
-            <img src="/assets/images/icon_gift_heart.png" alt="Health Icon" className="w-full object-contain drop-shadow-sm opacity-95" />
+          <div className="absolute right-[56px] top-1/2 -translate-y-1/2 w-[200px] h-[200px] flex items-center justify-center transition-transform duration-500 group-hover:scale-105 group-hover:rotate-1">
+            <img src="/assets/Banner01.webp" alt="Health Icon" className="w-full h-full object-contain drop-shadow-sm opacity-100" />
           </div>
         </div>
       </div>
