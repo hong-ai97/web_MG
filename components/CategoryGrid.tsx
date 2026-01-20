@@ -87,63 +87,67 @@ const CategoryGrid: React.FC = () => {
         {activeProducts.map((product, idx) => (
           <ScrollReveal
             key={idx}
-            delay={idx * 0.05}
-            className="group h-full min-h-[230px] bg-white rounded-[24px] p-6 pb-4 border border-transparent hover:border-blue-100 shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 cursor-pointer relative overflow-hidden flex flex-col justify-between"
+            delay={0.2 + (idx * 0.1)}
+            className="group h-full min-h-[230px]"
           >
-            {/* Content Container */}
-            <div className="z-10 w-full">
-              {/* Header: Tags */}
-              <div className="flex gap-1 mb-3">
-                <span className="bg-blue-50 text-blue-600 text-[10px] font-extrabold px-2 py-1 rounded-full tracking-wide flex items-center gap-1">
-                  {product.tag}
-                </span>
-                {product.isHot && (
-                  <span className="bg-sky-100 text-sky-600 text-[10px] font-extrabold px-2 py-1 rounded-full tracking-wide">인기상품</span>
-                )}
+            <div className="bg-white rounded-[24px] p-6 pb-4 border border-transparent hover:border-blue-100 shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 cursor-pointer relative overflow-hidden flex flex-col justify-between h-full">
+              {/* Content Container */}
+              <div className="z-10 w-full">
+                {/* Header: Tags */}
+                <div className="flex gap-1 mb-3">
+                  <span className="bg-blue-50 text-blue-600 text-[10px] font-extrabold px-2 py-1 rounded-full tracking-wide flex items-center gap-1">
+                    {product.tag}
+                  </span>
+                  {product.isHot && (
+                    <span className="bg-sky-100 text-sky-600 text-[10px] font-extrabold px-2 py-1 rounded-full tracking-wide">인기상품</span>
+                  )}
+                </div>
+
+                {/* Title & Desc */}
+                <h3 className="text-[17px] font-bold text-gray-900 mb-1 leading-tight group-hover:text-[#2FA5E9] transition-colors break-keep pr-8">
+                  {product.title}
+                </h3>
+                <p className="text-xs text-gray-500 font-medium break-keep pr-8">{product.desc}</p>
               </div>
 
-              {/* Title & Desc */}
-              <h3 className="text-[17px] font-bold text-gray-900 mb-1 leading-tight group-hover:text-[#2FA5E9] transition-colors break-keep pr-8">
-                {product.title}
-              </h3>
-              <p className="text-xs text-gray-500 font-medium break-keep pr-8">{product.desc}</p>
-            </div>
+              {/* Icon - Gap 24px from top text, Right Aligned */}
+              <div className="relative mt-2 self-end w-[56px] h-[56px] transition-transform duration-500 group-hover:scale-110">
+                <img
+                  src={(function () {
+                    const tag = product.tag;
+                    if (tag.includes('암') || tag.includes('건강')) return '/assets/images/icons/icon_cancer_3d.png';
+                    if (tag.includes('어린이')) return '/assets/images/icons/icon_children_3d.png';
+                    if (tag.includes('연금') || tag.includes('저축')) return '/assets/images/icons/icon_piggy_bank_new.png';
+                    return '/assets/images/icons/icon_home_3d.png';
+                  })()}
+                  alt={`${product.tag} Icon`}
+                  className="w-full h-full object-contain"
+                />
+              </div>
 
-            {/* Icon - Gap 24px from top text, Right Aligned */}
-            <div className="relative mt-2 self-end w-[56px] h-[56px] transition-transform duration-500 group-hover:scale-110">
-              <img
-                src={(function () {
-                  const tag = product.tag;
-                  if (tag.includes('암') || tag.includes('건강')) return '/assets/images/icons/icon_cancer_3d.png';
-                  if (tag.includes('어린이')) return '/assets/images/icons/icon_children_3d.png';
-                  if (tag.includes('연금') || tag.includes('저축')) return '/assets/images/icons/icon_piggy_bank_new.png';
-                  return '/assets/images/icons/icon_home_3d.png';
-                })()}
-                alt={`${product.tag} Icon`}
-                className="w-full h-full object-contain"
-              />
-            </div>
-
-            {/* Footer: Price - Gap 16px from Icon */}
-            <div className="w-full text-left z-10">
-              <p className="text-xs text-gray-400 font-normal border-t border-gray-100 pt-3">{product.price}</p>
+              {/* Footer: Price - Gap 16px from Icon */}
+              <div className="w-full text-left z-10">
+                <p className="text-xs text-gray-400 font-normal border-t border-gray-100 pt-3">{product.price}</p>
+              </div>
             </div>
           </ScrollReveal>
         ))}
 
         {/* 'See More' Card (10th Item) */}
         <ScrollReveal
-          delay={activeProducts.length * 0.05}
-          className="h-full min-h-[230px] bg-gray-50/50 rounded-[24px] border-2 border-dashed border-gray-200 hover:border-[#2FA5E9] hover:bg-blue-50/10 transition-all duration-300 cursor-pointer flex flex-col items-center justify-center gap-4 group"
+          delay={0.2 + (activeProducts.length * 0.1)}
+          className="h-full min-h-[230px] group"
         >
-          <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center text-gray-400 group-hover:text-[#2FA5E9] group-hover:scale-110 shadow-sm transition-all duration-300">
-            <ArrowRight className="w-6 h-6" />
-          </div>
-          <div className="text-center">
-            <span className="block text-lg font-bold text-gray-800 mb-1 group-hover:text-[#2FA5E9] transition-colors">
-              {CATEGORIES.find(c => c.id === activeTab)?.label}
-            </span>
-            <span className="text-sm text-gray-500">전체보기</span>
+          <div className="h-full w-full bg-gray-50/50 rounded-[24px] border-2 border-dashed border-gray-200 hover:border-[#2FA5E9] hover:bg-blue-50/10 transition-all duration-300 cursor-pointer flex flex-col items-center justify-center gap-4">
+            <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center text-gray-400 group-hover:text-[#2FA5E9] group-hover:scale-110 shadow-sm transition-all duration-300">
+              <ArrowRight className="w-6 h-6" />
+            </div>
+            <div className="text-center">
+              <span className="block text-lg font-bold text-gray-800 mb-1 group-hover:text-[#2FA5E9] transition-colors">
+                {CATEGORIES.find(c => c.id === activeTab)?.label}
+              </span>
+              <span className="text-sm text-gray-500">전체보기</span>
+            </div>
           </div>
         </ScrollReveal>
       </div>

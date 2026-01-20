@@ -87,32 +87,32 @@ const DirectProducts: React.FC = () => {
           {products.map((product, idx) => (
             <ScrollReveal
               key={`${product.id}-${product.originalId}`}
-              delay={idx % 4 * 0.1} // Stagger only visual items, modulo to keep delay reasonable
-              className="min-w-[calc(25%-9px)] bg-white rounded-[24px] p-7 flex flex-col justify-between hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-300 border border-gray-100 group mb-2"
+              delay={0.2 + (idx * 0.1)}
+              className="min-w-[calc(25%-9px)] mb-2 group"
             >
-              {/* Top Badge Removed */}
+              <div className="h-full bg-white rounded-[24px] p-7 flex flex-col justify-between hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-300 border border-gray-100">
+                {/* Text Content Area */}
+                <div className="flex flex-col mb-6">
+                  <h3 className="text-[20px] font-semibold text-[#111111] mb-2 group-hover:text-[#2FA5E9] transition-colors leading-tight break-keep">
+                    {product.title}
+                  </h3>
+                  <p className="text-[15px] text-[#666666] font-medium leading-snug opacity-90 break-keep">
+                    {product.description}
+                  </p>
+                </div>
 
-              {/* Text Content Area */}
-              <div className="flex flex-col mb-6">
-                <h3 className="text-[20px] font-semibold text-[#111111] mb-2 group-hover:text-[#2FA5E9] transition-colors leading-tight break-keep">
-                  {product.title}
-                </h3>
-                <p className="text-[15px] text-[#666666] font-medium leading-snug opacity-90 break-keep">
-                  {product.description}
-                </p>
-              </div>
+                {/* Icon Area: Space to footer is kept at 12px (mb-3) */}
+                <div className="flex justify-end mt-auto mb-3">
+                  <ProductIcon id={product.originalId} title={product.title} />
+                </div>
 
-              {/* Icon Area: Space to footer is kept at 12px (mb-3) */}
-              <div className="flex justify-end mt-auto mb-3">
-                <ProductIcon id={product.originalId} title={product.title} />
-              </div>
-
-              {/* Footer Area */}
-              <div>
-                <button className="w-full h-10 rounded-[8px] bg-[#EFF8FF] hover:bg-[#2FA5E9] hover:text-white flex items-center justify-center gap-2 text-[#2FA5E9] font-bold transition-all duration-300 group/btn shadow-sm hover:shadow-md">
-                  <span className="text-[15px]">자세히 보기</span>
-                  <ChevronRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
-                </button>
+                {/* Footer Area */}
+                <div>
+                  <button className="w-full h-10 rounded-[8px] bg-[#EFF8FF] hover:bg-[#2FA5E9] hover:text-white flex items-center justify-center gap-2 text-[#2FA5E9] font-bold transition-all duration-300 group/btn shadow-sm hover:shadow-md">
+                    <span className="text-[15px]">자세히 보기</span>
+                    <ChevronRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                  </button>
+                </div>
               </div>
             </ScrollReveal>
           ))}
