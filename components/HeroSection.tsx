@@ -23,9 +23,7 @@ const HeroSection: React.FC = () => {
 
 
             <div className="relative z-20 h-full flex flex-col justify-start px-8 md:px-14 pt-16 md:pt-20">
-              <span className="text-white text-sm font-bold mb-6 inline-block">
-                MG새마을금고 보험
-              </span>
+
 
               <h1 className="text-3xl md:text-[40px] font-bold text-white leading-tight tracking-tight drop-shadow-sm mb-4 break-keep flex flex-col gap-[4px]">
                 <span>온라인에서 간편하게</span>
@@ -38,15 +36,15 @@ const HeroSection: React.FC = () => {
               </p>
 
               <div className="mt-[64px]">
-                <button className="flex items-center gap-2 bg-white text-[#1D8ED3] font-extrabold px-8 h-12 rounded-full w-fit transition-all hover:-translate-y-0.5 group/btn border border-white">
-                  <span className="text-lg">바로가기</span>
+                <button className="flex items-center gap-2 bg-white text-[#1D8ED3] font-bold px-6 h-12 rounded-full w-fit transition-all hover:-translate-y-0.5 group/btn border border-white">
+                  <span className="text-base">바로가기</span>
                   <ChevronRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
                 </button>
               </div>
             </div>
 
             <div className="absolute bottom-8 right-8 z-30 flex items-center gap-4 bg-black/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 shadow-sm">
-              <div className="flex items-center gap-2 text-white/90 text-sm font-bold">
+              <div className="flex items-center gap-2 text-white/90 text-xs font-semibold">
                 <span>02</span>
                 <span className="w-8 h-[1px] bg-white/30"></span>
                 <span className="opacity-60">04</span>
@@ -69,7 +67,7 @@ const HeroSection: React.FC = () => {
 
 
 
-            <div className="flex gap-2 w-full mb-10 px-2">
+            <div className="flex justify-center gap-2 w-full mb-10 px-2">
               <button className="w-[154px] h-[48px] bg-[#174291] hover:bg-black text-white rounded-[8px] flex flex-col md:flex-row items-center justify-center gap-2 transition-all shadow-md hover:-translate-y-1 active:scale-[0.98] group">
                 <User className="w-5 h-5 opacity-90 group-hover:scale-110 transition-transform" strokeWidth={2.5} />
                 <span className="font-bold text-[15px]">개인회원</span>
@@ -89,24 +87,24 @@ const HeroSection: React.FC = () => {
 
               <div className="flex justify-center gap-4 px-1">
                 <div className="flex flex-col items-center gap-2.5 group cursor-pointer w-24">
-                  <div className="w-14 h-14 rounded-[20px] border border-gray-100 flex items-center justify-center bg-gray-50 group-hover:bg-white group-hover:border-[#2FA5E9] transition-all">
-                    <FileCheck className="w-6 h-6 text-gray-500 group-hover:text-[#2FA5E9]" strokeWidth={1.5} />
+                  <div className="w-[52px] h-[52px] flex items-center justify-center">
+                    <img src="/assets/login-icon-1.png" alt="개인정보동의" className="w-[52px] h-[52px] object-contain" />
                   </div>
-                  <span className="text-[13px] font-bold text-gray-500 group-hover:text-gray-900 transition-colors whitespace-nowrap">개인정보동의</span>
+                  <span className="text-[14px] font-medium text-[#666666] group-hover:text-gray-900 transition-colors whitespace-nowrap">개인정보동의</span>
                 </div>
 
                 <div className="flex flex-col items-center gap-2.5 group cursor-pointer w-24">
-                  <div className="w-14 h-14 rounded-[20px] border border-gray-100 flex items-center justify-center bg-gray-50 group-hover:bg-white group-hover:border-[#2FA5E9] transition-all">
-                    <Inbox className="w-6 h-6 text-gray-500 group-hover:text-[#2FA5E9]" strokeWidth={1.5} />
+                  <div className="w-[52px] h-[52px] flex items-center justify-center">
+                    <img src="/assets/login-icon-2.png" alt="보험증권 사서함" className="w-[52px] h-[52px] object-contain" />
                   </div>
-                  <span className="text-[13px] font-bold text-gray-500 group-hover:text-gray-900 transition-colors whitespace-nowrap">보험증권 사서함</span>
+                  <span className="text-[14px] font-medium text-[#666666] group-hover:text-gray-900 transition-colors whitespace-nowrap">보험증권 사서함</span>
                 </div>
 
                 <div className="flex flex-col items-center gap-2.5 group cursor-pointer w-24">
-                  <div className="w-14 h-14 rounded-[20px] border border-gray-100 flex items-center justify-center bg-gray-50 group-hover:bg-white group-hover:border-[#2FA5E9] transition-all">
-                    <Printer className="w-6 h-6 text-gray-500 group-hover:text-[#2FA5E9]" strokeWidth={1.5} />
+                  <div className="w-[52px] h-[52px] flex items-center justify-center">
+                    <img src="/assets/login-icon-3.png" alt="증권 발급 확인" className="w-[52px] h-[52px] object-contain" />
                   </div>
-                  <span className="text-[13px] font-bold text-gray-500 group-hover:text-gray-900 transition-colors whitespace-nowrap">증권 발급 확인</span>
+                  <span className="text-[14px] font-medium text-[#666666] group-hover:text-gray-900 transition-colors whitespace-nowrap">증권 발급 확인</span>
                 </div>
               </div>
             </div>
@@ -114,7 +112,7 @@ const HeroSection: React.FC = () => {
         </div>
 
         {/* Quick Menu Block - Reduced internal gaps for compact layout */}
-        <div className="relative -mt-0 z-10 bg-white rounded-[32px] p-6 lg:p-10 shadow-[0_15px_35px_rgba(0,0,0,0.06)] border border-gray-100/50 hover:border-blue-50 transition-colors">
+        <div className="relative -mt-0 z-10 bg-white rounded-[32px] p-6 lg:p-8 shadow-[0_15px_35px_rgba(0,0,0,0.06)] border border-gray-100/50 hover:border-blue-50 transition-colors">
           <div className="flex flex-col lg:flex-row items-center">
 
             {/* Quick Menu: ~55% Width */}
@@ -127,19 +125,19 @@ const HeroSection: React.FC = () => {
                 { label: '보험계약 대출', imgSrc: '/assets/quick-icon-5.png', hoverImgSrc: '/assets/quick-icon-5-hover.png' },
               ].map((item, idx) => (
                 <div key={idx} className="flex flex-col items-center justify-center gap-2 cursor-pointer group">
-                  <div className="w-[56px] h-[56px] relative flex items-center justify-center">
+                  <div className="w-[52px] h-[52px] relative flex items-center justify-center">
                     <img
                       src={item.imgSrc}
                       alt={item.label}
-                      className="w-[56px] h-[56px] object-contain absolute transition-opacity duration-300 group-hover:opacity-0"
+                      className="w-[52px] h-[52px] object-contain absolute transition-opacity duration-300 group-hover:opacity-0"
                     />
                     <img
                       src={item.hoverImgSrc}
                       alt={item.label}
-                      className="w-[56px] h-[56px] object-contain absolute transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+                      className="w-[52px] h-[52px] object-contain absolute transition-opacity duration-300 opacity-0 group-hover:opacity-100"
                     />
                   </div>
-                  <span className="font-bold text-gray-600 text-[13px] group-hover:text-gray-900 transition-colors whitespace-nowrap tracking-tight">{item.label}</span>
+                  <span className="font-medium text-[#111111] text-[15px] group-hover:text-black transition-colors whitespace-nowrap tracking-tight">{item.label}</span>
                 </div>
               ))}
             </div>
@@ -154,11 +152,11 @@ const HeroSection: React.FC = () => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
-                <span className="text-lg font-extrabold text-gray-800 tracking-tight">최근 이용한 메뉴</span>
+                <span className="text-[16px] font-bold text-[#111111] tracking-tight">최근 이용한 메뉴</span>
               </div>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1">
                 {['# 자동차보험 갱신', '# 증명서 발급', '# 고객센터 연결', '# 마이페이지', '# 보험금 청구'].map((tag, i) => (
-                  <button key={i} className="px-3 py-2 bg-gray-50 hover:bg-white text-gray-500 hover:text-[#2FA5E9] rounded-full text-xs font-bold transition-all border border-gray-100 hover:border-blue-100 hover:shadow-md">
+                  <button key={i} className="px-3 py-1.5 bg-[#f5f5f5] hover:bg-gray-100 text-[#666666] hover:text-[#2FA5E9] rounded-full text-[13px] font-medium transition-all">
                     {tag}
                   </button>
                 ))}
