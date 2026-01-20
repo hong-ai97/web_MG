@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { CATEGORIES } from '../constants';
-import { ArrowRight, Plus } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 // Mock data generator for tab content
 const getMockProductsForCategory = (categoryId: number, categoryLabel: string) => {
@@ -48,17 +49,19 @@ const CategoryGrid: React.FC = () => {
 
   return (
     <section className="max-w-[1280px] mx-auto px-4">
-      <div className="mb-8 px-1">
+      <ScrollReveal className="mb-8 px-1">
         <h2 className="text-2xl md:text-3xl font-bold text-[#111111] mb-3 tracking-tight">모든 상품을 한눈에</h2>
         <p className="text-gray-500 font-medium">원하시는 상품의 카테고리를 선택해보세요.</p>
-      </div>
+      </ScrollReveal>
 
       {/* Tabs */}
-      <div
+      <ScrollReveal
         className="mb-6 overflow-x-auto scrollbar-hide px-1"
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        width="100%"
       >
-        <div className="flex gap-1 min-w-max border-b border-gray-100 pb-0">
+        <div
+          className="flex gap-1 min-w-max border-b border-gray-100 pb-0"
+        >
           {CATEGORIES.map((category) => (
             <button
               key={category.id}
@@ -78,12 +81,15 @@ const CategoryGrid: React.FC = () => {
             </button>
           ))}
         </div>
-      </div>
+      </ScrollReveal>
 
       <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
         {activeProducts.map((product, idx) => (
-          <div key={idx} className="group h-full min-h-[230px] bg-white rounded-[24px] p-6 pb-4 border border-transparent hover:border-blue-100 shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 cursor-pointer relative overflow-hidden flex flex-col justify-between">
-
+          <ScrollReveal
+            key={idx}
+            delay={idx * 0.05}
+            className="group h-full min-h-[230px] bg-white rounded-[24px] p-6 pb-4 border border-transparent hover:border-blue-100 shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 cursor-pointer relative overflow-hidden flex flex-col justify-between"
+          >
             {/* Content Container */}
             <div className="z-10 w-full">
               {/* Header: Tags */}
@@ -122,11 +128,14 @@ const CategoryGrid: React.FC = () => {
             <div className="w-full text-left z-10">
               <p className="text-xs text-gray-400 font-normal border-t border-gray-100 pt-3">{product.price}</p>
             </div>
-          </div>
+          </ScrollReveal>
         ))}
 
         {/* 'See More' Card (10th Item) */}
-        <div className="h-full min-h-[230px] bg-gray-50/50 rounded-[24px] border-2 border-dashed border-gray-200 hover:border-[#2FA5E9] hover:bg-blue-50/10 transition-all duration-300 cursor-pointer flex flex-col items-center justify-center gap-4 group">
+        <ScrollReveal
+          delay={activeProducts.length * 0.05}
+          className="h-full min-h-[230px] bg-gray-50/50 rounded-[24px] border-2 border-dashed border-gray-200 hover:border-[#2FA5E9] hover:bg-blue-50/10 transition-all duration-300 cursor-pointer flex flex-col items-center justify-center gap-4 group"
+        >
           <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center text-gray-400 group-hover:text-[#2FA5E9] group-hover:scale-110 shadow-sm transition-all duration-300">
             <ArrowRight className="w-6 h-6" />
           </div>
@@ -136,7 +145,7 @@ const CategoryGrid: React.FC = () => {
             </span>
             <span className="text-sm text-gray-500">전체보기</span>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section >
   );

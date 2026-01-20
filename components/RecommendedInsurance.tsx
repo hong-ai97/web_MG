@@ -1,15 +1,16 @@
 import React from 'react';
-import { ArrowRight, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const RecommendedInsurance: React.FC = () => {
   return (
     <section className="max-w-[1280px] mx-auto px-4">
-      <div className="mb-8 px-2">
+      <ScrollReveal className="mb-8 px-2">
         <h2 className="text-3xl font-bold text-[#111111] tracking-tight mb-3">고객님께 꼭 필요한 보험</h2>
         <p className="text-gray-500 font-medium">라이프스타일에 맞춘 최적의 상품을 제안합니다</p>
-      </div>
+      </ScrollReveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <ScrollReveal className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Card 1: Future (Vibrant Green) - Swapped Content */}
         <div className="bg-[#16AA6A] rounded-[24px] pl-10 py-10 pr-[56px] relative overflow-hidden group transition-all hover:shadow-lg">
           <div className="relative z-10 flex flex-col justify-between h-full min-h-[220px]">
@@ -62,7 +63,7 @@ const RecommendedInsurance: React.FC = () => {
             <img src="/assets/Banner01.webp" alt="Health Icon" className="w-full h-full object-contain drop-shadow-sm opacity-100" />
           </div>
         </div>
-      </div>
+      </ScrollReveal>
     </section>
   );
 };

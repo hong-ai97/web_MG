@@ -1,11 +1,12 @@
 import React from 'react';
 import { NOTICES } from '../constants';
-import { ChevronRight, Smartphone, MapPin, HelpCircle, FileText, Download, Bell } from 'lucide-react';
+import { Smartphone, MapPin, HelpCircle, FileText, Download, Bell } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const InfoSection: React.FC = () => {
   return (
     <section className="max-w-[1280px] mx-auto px-4">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-3">
+      <ScrollReveal className="grid grid-cols-1 lg:grid-cols-12 gap-3">
 
         {/* Column 1: Notices & Utilities (Span 8) */}
         <div className="lg:col-span-8 flex flex-col gap-3">
@@ -98,7 +99,7 @@ const InfoSection: React.FC = () => {
           </div>
         </div>
 
-      </div>
+      </ScrollReveal>
     </section>
   );
 };
