@@ -70,11 +70,11 @@ const HeroSection: React.FC = () => {
 
 
             <div className="flex gap-2 w-full mb-10 px-2">
-              <button className="flex-1 bg-[#174291] hover:bg-[#123675] text-white rounded-[8px] py-4 flex flex-col md:flex-row items-center justify-center gap-2 transition-all shadow-md active:scale-[0.98] group">
+              <button className="w-[154px] h-[48px] bg-[#174291] hover:bg-black text-white rounded-[8px] flex flex-col md:flex-row items-center justify-center gap-2 transition-all shadow-md hover:-translate-y-1 active:scale-[0.98] group">
                 <User className="w-5 h-5 opacity-90 group-hover:scale-110 transition-transform" strokeWidth={2.5} />
                 <span className="font-bold text-[15px]">개인회원</span>
               </button>
-              <button className="flex-1 bg-[#174291] hover:bg-[#123675] text-white rounded-[8px] py-4 flex flex-col md:flex-row items-center justify-center gap-2 transition-all shadow-md active:scale-[0.98] group">
+              <button className="w-[154px] h-[48px] bg-[#174291] hover:bg-black text-white rounded-[8px] flex flex-col md:flex-row items-center justify-center gap-2 transition-all shadow-md hover:-translate-y-1 active:scale-[0.98] group">
                 <Building2 className="w-5 h-5 opacity-90 group-hover:scale-110 transition-transform" strokeWidth={2.5} />
                 <span className="font-bold text-[15px]">법인회원</span>
               </button>

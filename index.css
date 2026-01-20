@@ -1,19 +1,38 @@
-@keyframes meshFlow {
+@keyframes liquidDrift {
     0% {
-        background-position: 0% 50%;
+        background-position: 0% 0%, 100% 100%, 50% 50%;
+        background-size: 100% 100%, 100% 100%, 80% 80%;
+    }
+
+    25% {
+        background-position: 10% 20%, 90% 80%, 60% 40%;
+        background-size: 110% 110%, 90% 90%, 85% 85%;
     }
 
     50% {
-        background-position: 100% 50%;
+        background-position: 0% 10%, 100% 90%, 50% 60%;
+        background-size: 100% 120%, 120% 100%, 90% 90%;
+    }
+
+    75% {
+        background-position: -10% -20%, 110% 110%, 40% 50%;
+        background-size: 90% 90%, 110% 110%, 80% 85%;
     }
 
     100% {
-        background-position: 0% 50%;
+        background-position: 0% 0%, 100% 100%, 50% 50%;
+        background-size: 100% 100%, 100% 100%, 80% 80%;
     }
 }
 
 .mesh-gradient-bg {
-    background: linear-gradient(-45deg, #2FA5E9 0%, #2FA5E9 35%, #6DD8FF 50%, #2FA5E9 65%, #2FA5E9 100%);
-    background-size: 400% 400%;
-    animation: meshFlow 15s ease infinite;
+    background-color: #2FA5E9;
+    background-image:
+        radial-gradient(circle at 30% 30%, rgba(109, 216, 255, 0.45) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(109, 216, 255, 0.35) 0%, transparent 50%),
+        radial-gradient(ellipses at 50% 50%, rgba(109, 216, 255, 0.25) 0%, transparent 60%);
+    background-repeat: no-repeat;
+    background-size: 120% 120%;
+    animation: liquidDrift 20s ease-in-out infinite both;
+    filter: contrast(110%) brightness(105%);
 }
