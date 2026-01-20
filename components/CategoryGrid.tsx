@@ -40,12 +40,33 @@ const getMockProductsForCategory = (categoryId: number, categoryLabel: string) =
   return products;
 };
 
-const containerVariants = {
+const sectionVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.05, // Faster stagger
-      delayChildren: 0.1,
+      staggerChildren: 0.3, // Delay between Title and Grid
+    }
+  }
+};
+
+const headerVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.2, // Relaxed speed
+      ease: [0.22, 1, 0.36, 1]
+    }
+  }
+};
+
+const contentVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.05, // Internal stagger for grid items
+      delayChildren: 0,
     }
   }
 };
@@ -71,16 +92,23 @@ const CategoryGrid: React.FC = () => {
   );
 
   return (
-    <section className="max-w-[1280px] mx-auto px-4">
-      <ScrollReveal className="mb-8 px-1">
+    <motion.section
+      className="max-w-[1280px] mx-auto px-4"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }} // Standard trigger for grid
+      variants={sectionVariants}
+    >
+      <motion.div className="mb-8 px-1" variants={headerVariants}>
         <h2 className="text-2xl md:text-3xl font-bold text-[#111111] mb-3 tracking-tight">모든 상품을 한눈에</h2>
         <p className="text-gray-500 font-medium">원하시는 상품의 카테고리를 선택해보세요.</p>
-      </ScrollReveal>
+      </motion.div>
 
       {/* Tabs */}
-      <ScrollReveal
+      <motion.div
         className="mb-6 overflow-x-auto scrollbar-hide px-1"
-        width="100%"
+        variants={headerVariants} // Animate with header or slightly after? Let's keep it with header flow
+        style={{ width: "100%" }}
       >
         <div
           className="flex gap-1 min-w-max border-b border-gray-100 pb-0"
@@ -104,15 +132,12 @@ const CategoryGrid: React.FC = () => {
             </button>
           ))}
         </div>
-      </ScrollReveal>
+      </motion.div>
 
       {/* Grid Container with Shared Trigger */}
       <motion.div
         className="grid grid-cols-2 md:grid-cols-5 gap-3"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.15 }} // Slightly earlier than 0.2 because the grid is tall
-        variants={containerVariants}
+        variants={contentVariants}
       >
         {activeProducts.map((product, idx) => (
           <motion.div
@@ -181,7 +206,7 @@ const CategoryGrid: React.FC = () => {
           </div>
         </motion.div>
       </motion.div>
-    </section >
+    </motion.section >
   );
 };
 

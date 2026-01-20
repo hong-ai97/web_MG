@@ -32,12 +32,33 @@ const ProductIcon: React.FC<{ id: number; title: string }> = ({ id, title }) => 
   );
 };
 
-const containerVariants = {
+const sectionVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.05, // Faster stagger as requested
-      delayChildren: 0.1, // Reduced initial delay
+      staggerChildren: 0.3, // Delay between Title and Content
+    }
+  }
+};
+
+const headerVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.2, // Relaxed speed
+      ease: [0.22, 1, 0.36, 1]
+    }
+  }
+};
+
+const carouselVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.05, // Internal stagger for cards
+      delayChildren: 0,
     }
   }
 };
@@ -71,11 +92,17 @@ const DirectProducts: React.FC = () => {
   };
 
   return (
-    <section className="max-w-[1280px] mx-auto px-4">
+    <motion.section
+      className="max-w-[1280px] mx-auto px-4"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.5, margin: "0px 0px -20% 0px" }} // Strict trigger
+      variants={sectionVariants}
+    >
       {/* Section Header with Navigation UI */}
-      <ScrollReveal
+      <motion.div
         className="flex justify-between items-end mb-8 px-2"
-        viewport={{ once: true, amount: 0.8, margin: "0px 0px -20% 0px" }} // VERY Strict trigger: requires significant scrolling
+        variants={headerVariants}
       >
         <div>
           <h2 className="text-3xl font-bold text-[#111111] tracking-tight mb-3">다이렉트 인기 상품</h2>
@@ -102,21 +129,18 @@ const DirectProducts: React.FC = () => {
             </button>
           </div>
         </div>
-      </ScrollReveal>
+      </motion.div>
 
       {/* Carousel Container */}
       <div className="overflow-hidden px-2 -mx-2 py-4 -my-4">
         <motion.div
           className="flex transition-transform duration-500 ease-in-out gap-3"
           style={{ transform: `translateX(-${currentIndex * 25}%)` }}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3, margin: "0px 0px -20% 0px" }} // Also delayed grid
-          variants={containerVariants}
+          variants={carouselVariants}
         >
           {products.map((product) => (
             <motion.div
-              layout // Helps with layout changes if any
+              layout
               key={`${product.id}-${product.originalId}`}
               variants={itemVariants}
               className="min-w-[calc(25%-9px)] mb-2 group"
@@ -149,7 +173,7 @@ const DirectProducts: React.FC = () => {
           ))}
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

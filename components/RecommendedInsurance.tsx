@@ -3,12 +3,33 @@ import { ChevronRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 import { motion } from 'framer-motion';
 
-const containerVariants = {
+const sectionVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.05, // Faster stagger
-      delayChildren: 0.1,
+      staggerChildren: 0.3, // Delay between Title and Cards
+    }
+  }
+};
+
+const headerVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.2, // Relaxed speed
+      ease: [0.22, 1, 0.36, 1]
+    }
+  }
+};
+
+const gridVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1, // Stagger between the two cards
+      delayChildren: 0,
     }
   }
 };
@@ -27,18 +48,21 @@ const itemVariants = {
 
 const RecommendedInsurance: React.FC = () => {
   return (
-    <section className="max-w-[1280px] mx-auto px-4">
-      <ScrollReveal className="mb-8 px-2">
+    <motion.section
+      className="max-w-[1280px] mx-auto px-4"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.4, margin: "0px 0px -30% 0px" }} // Adjusted separation
+      variants={sectionVariants}
+    >
+      <motion.div className="mb-8 px-2" variants={headerVariants}>
         <h2 className="text-3xl font-bold text-[#111111] tracking-tight mb-3">고객님께 꼭 필요한 보험</h2>
         <p className="text-gray-500 font-medium">라이프스타일에 맞춘 최적의 상품을 제안합니다</p>
-      </ScrollReveal>
+      </motion.div>
 
       <motion.div
         className="grid grid-cols-1 md:grid-cols-2 gap-4"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={containerVariants}
+        variants={gridVariants}
       >
         {/* Card 1: Future (Vibrant Green) */}
         <motion.div className="h-full" variants={itemVariants}>
@@ -91,7 +115,7 @@ const RecommendedInsurance: React.FC = () => {
           </div>
         </motion.div>
       </motion.div>
-    </section>
+    </motion.section>
   );
 };
 
