@@ -12,16 +12,15 @@ const HeroSection: React.FC = () => {
 
           {/* Left: Visual Area (Banner Style) */}
           <div className="lg:col-span-8 relative bg-gradient-to-br from-[#68C9F8] via-[#2FA5E9] to-[#1D8ED3] rounded-[32px] overflow-hidden group shadow-[0_20px_40px_-12px_rgba(47,165,233,0.2)] transition-all duration-500">
-            <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-white/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-[-20%] right-[20%] w-[400px] h-[400px] bg-[#BAE6FD]/20 rounded-full blur-3xl animate-pulse"></div>
+
 
             <img
-              src="https://i.postimg.cc/PJkbBkXj/main-img.png"
+              src="/shield-final-v4.png"
               alt="Banner Visual"
-              className="absolute right-[5%] top-1/2 w-[40%] lg:w-[35%] object-contain transition-transform duration-700 group-hover:scale-105 z-10 animate-float-hero"
+              className="absolute right-[5%] top-1/2 -translate-y-1/2 w-[40%] lg:w-[35%] object-contain z-10"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-r from-[#2FA5E9]/10 via-transparent to-transparent z-0 pointer-events-none"></div>
+
 
             <div className="relative z-20 h-full flex flex-col justify-start px-8 md:px-14 pt-16 md:pt-20">
               <span className="inline-flex items-center px-4 py-1.5 border border-white text-white text-sm font-bold rounded-full w-fit mb-6">
