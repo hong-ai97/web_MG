@@ -11,12 +11,12 @@ const HeroSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 h-auto lg:h-[480px]">
 
           {/* Left: Visual Area (Banner Style) */}
-          <div className="lg:col-span-8 relative bg-gradient-to-br from-[#68C9F8] via-[#2FA5E9] to-[#1D8ED3] rounded-[32px] overflow-hidden group shadow-[0_20px_40px_-12px_rgba(47,165,233,0.2)] transition-all duration-500">
+          <div className="lg:col-span-8 relative bg-[#32a3ed] rounded-[32px] overflow-hidden group shadow-[0_20px_40px_-12px_rgba(47,165,233,0.2)] transition-all duration-500">
 
 
             <img
-              src="/shield-final-v4.png"
-              alt="Banner Visual"
+              src="/assets/main_icon.webp"
+              alt="Main Visual Icon"
               className="absolute right-[5%] top-1/2 -translate-y-1/2 w-[40%] lg:w-[35%] object-contain z-10"
             />
 
