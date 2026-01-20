@@ -1,0 +1,19 @@
+@keyframes meshFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.mesh-gradient-bg {
+    background: linear-gradient(-45deg, #2FA5E9 0%, #2FA5E9 35%, #6DD8FF 50%, #2FA5E9 65%, #2FA5E9 100%);
+    background-size: 400% 400%;
+    animation: meshFlow 15s ease infinite;
+}

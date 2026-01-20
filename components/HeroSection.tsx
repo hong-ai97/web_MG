@@ -11,7 +11,7 @@ const HeroSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 h-auto lg:h-[480px]">
 
           {/* Left: Visual Area (Banner Style) */}
-          <div className="lg:col-span-8 relative bg-[#32a3ed] rounded-[32px] overflow-hidden group shadow-[0_20px_40px_-12px_rgba(47,165,233,0.2)] transition-all duration-500">
+          <div className="lg:col-span-8 relative mesh-gradient-bg rounded-[32px] overflow-hidden group shadow-[0_20px_40px_-12px_rgba(47,165,233,0.2)] transition-all duration-500">
 
 
             <img
@@ -23,11 +23,11 @@ const HeroSection: React.FC = () => {
 
 
             <div className="relative z-20 h-full flex flex-col justify-start px-8 md:px-14 pt-16 md:pt-20">
-              <span className="inline-flex items-center px-4 py-1.5 border border-white text-white text-sm font-bold rounded-full w-fit mb-6">
+              <span className="text-white text-sm font-bold mb-6 inline-block">
                 MG새마을금고 보험
               </span>
 
-              <h1 className="text-3xl md:text-[40px] font-semibold text-white leading-tight tracking-tight drop-shadow-sm mb-4 break-keep flex flex-col gap-[4px]">
+              <h1 className="text-3xl md:text-[40px] font-bold text-white leading-tight tracking-tight drop-shadow-sm mb-4 break-keep flex flex-col gap-[4px]">
                 <span>온라인에서 간편하게</span>
                 <span className="text-white">조회하는 새마을금고</span>
               </h1>
@@ -120,15 +120,24 @@ const HeroSection: React.FC = () => {
             {/* Quick Menu: ~55% Width */}
             <div className="w-full lg:w-[55%] flex justify-between md:justify-around px-2 lg:px-4">
               {[
-                { label: '계약조회', icon: Search },
-                { label: '보험금 청구', icon: FileText },
-                { label: '보험료 납입', icon: CreditCard },
-                { label: '대출 신청', icon: HandCoins },
-                { label: '보험계약 대출', icon: Calculator },
+                { label: '계약조회', imgSrc: '/assets/quick-icon-1.png', hoverImgSrc: '/assets/quick-icon-1-hover.png' },
+                { label: '보험금 청구', imgSrc: '/assets/quick-icon-2.png', hoverImgSrc: '/assets/quick-icon-2-hover.png' },
+                { label: '보험료 납입', imgSrc: '/assets/quick-icon-3.png', hoverImgSrc: '/assets/quick-icon-3-hover.png' },
+                { label: '대출 신청', imgSrc: '/assets/quick-icon-4.png', hoverImgSrc: '/assets/quick-icon-4-hover.png' },
+                { label: '보험계약 대출', imgSrc: '/assets/quick-icon-5.png', hoverImgSrc: '/assets/quick-icon-5-hover.png' },
               ].map((item, idx) => (
-                <div key={idx} className="flex flex-col items-center justify-center gap-3 cursor-pointer group">
-                  <div className={`w-[56px] h-[56px] flex items-center justify-center bg-[rgb(249,250,251)] rounded-[24px] text-[#555555] group-hover:bg-[#2FA5E9] group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-lg group-hover:-translate-y-1`}>
-                    <item.icon className="w-7 h-7" strokeWidth={1.5} />
+                <div key={idx} className="flex flex-col items-center justify-center gap-2 cursor-pointer group">
+                  <div className="w-[56px] h-[56px] relative flex items-center justify-center">
+                    <img
+                      src={item.imgSrc}
+                      alt={item.label}
+                      className="w-[56px] h-[56px] object-contain absolute transition-opacity duration-300 group-hover:opacity-0"
+                    />
+                    <img
+                      src={item.hoverImgSrc}
+                      alt={item.label}
+                      className="w-[56px] h-[56px] object-contain absolute transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+                    />
                   </div>
                   <span className="font-bold text-gray-600 text-[13px] group-hover:text-gray-900 transition-colors whitespace-nowrap tracking-tight">{item.label}</span>
                 </div>
