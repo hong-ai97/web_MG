@@ -24,7 +24,7 @@ const HeroSection: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-[#2FA5E9]/10 via-transparent to-transparent z-0 pointer-events-none"></div>
 
             <div className="relative z-20 h-full flex flex-col justify-start px-8 md:px-14 pt-16 md:pt-20">
-              <span className="inline-flex items-center px-4 py-1.5 bg-white/15 backdrop-blur-md border border-white/30 text-white text-sm font-bold rounded-full w-fit mb-6 shadow-sm">
+              <span className="inline-flex items-center px-4 py-1.5 border border-white text-white text-sm font-bold rounded-full w-fit mb-6">
                 MG새마을금고 보험
               </span>
 
