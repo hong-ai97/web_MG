@@ -145,9 +145,9 @@ const DirectProducts: React.FC = () => {
               variants={itemVariants}
               className="min-w-[calc(25%-9px)] mb-2 group"
             >
-              <div className="h-full bg-white rounded-[24px] p-7 flex flex-col justify-between hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-300 border border-gray-100">
-                {/* Text Content Area */}
-                <div className="flex flex-col mb-6">
+              <div className="h-full bg-white rounded-[24px] p-7 flex flex-col justify-between hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-300 border border-gray-100 aspect-square">
+                {/* Text Content Area - Flex-1 to push icon down */}
+                <div className="flex flex-col mb-4 flex-1">
                   <h3 className="text-[20px] font-semibold text-[#111111] mb-2 group-hover:text-[#2FA5E9] transition-colors leading-tight break-keep">
                     {product.title}
                   </h3>
@@ -157,7 +157,7 @@ const DirectProducts: React.FC = () => {
                 </div>
 
                 {/* Icon Area: Space to footer is kept at 12px (mb-3) */}
-                <div className="flex justify-end mt-auto mb-3">
+                <div className="flex justify-end mb-5">
                   <ProductIcon id={product.originalId} title={product.title} />
                 </div>
 

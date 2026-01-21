@@ -15,7 +15,7 @@ const getMockProductsForCategory = (categoryId: number, categoryLabel: string) =
       id: 2, title: "MG더좋은우리아이공제", desc: "사랑하는 우리 아이를 위해", price: "월 5만원부터", tag: "어린이", isHot: false
     },
     {
-      id: 3, title: "MG365일가족든든간병공제", desc: "병원비 100세까지 보장", price: "월 10만원부터", tag: "종신/보장", isHot: false
+      id: 3, title: "MG365일가족간병공제", desc: "병원비 100세까지 보장", price: "월 10만원부터", tag: "종신/보장", isHot: false
     },
     {
       id: 4, title: "MG연금저축", desc: "안정적인 노후 준비", price: "월 10만원부터", tag: "연금", isHot: false
@@ -27,13 +27,13 @@ const getMockProductsForCategory = (categoryId: number, categoryLabel: string) =
       id: 6, title: "MG더좋은우리아이공제", desc: "사랑하는 우리 아이를 위해", price: "월 5만원부터", tag: "어린이", isHot: false
     },
     {
-      id: 7, title: "MG365일가족든든간병공제", desc: "병원비 100세까지 보장", price: "월 10만원부터", tag: "종신/보장", isHot: false
+      id: 7, title: "MG365일가족간병공제", desc: "병원비 100세까지 보장", price: "월 10만원부터", tag: "종신/보장", isHot: false
     },
     {
       id: 8, title: "MG연금저축", desc: "안정적인 노후 준비", price: "월 10만원부터", tag: "연금", isHot: false
     },
     {
-      id: 9, title: "MG365일가족든든간병공제", desc: "병원비 100세까지 보장", price: "월 10만원부터", tag: "종신/보장", isHot: false
+      id: 9, title: "MG365일가족간병공제", desc: "병원비 100세까지 보장", price: "월 10만원부터", tag: "종신/보장", isHot: false
     },
   ];
 
@@ -159,10 +159,10 @@ const CategoryGrid: React.FC = () => {
                 </div>
 
                 {/* Title & Desc */}
-                <h3 className="text-[17px] font-bold text-gray-900 mb-1 leading-tight group-hover:text-[#2FA5E9] transition-colors break-keep pr-8">
+                <h3 className="text-[17px] font-semibold text-gray-900 mb-1 leading-tight group-hover:text-[#2FA5E9] transition-colors break-keep pr-8">
                   {product.title}
                 </h3>
-                <p className="text-xs text-gray-500 font-medium break-keep pr-8">{product.desc}</p>
+                <p className="text-[14px] text-[#666666] font-medium break-keep pr-8">{product.desc}</p>
               </div>
 
               {/* Icon - Gap 24px from top text, Right Aligned */}
@@ -182,7 +182,7 @@ const CategoryGrid: React.FC = () => {
 
               {/* Footer: Price - Gap 16px from Icon */}
               <div className="w-full text-left z-10">
-                <p className="text-xs text-gray-400 font-normal border-t border-gray-100 pt-3">{product.price}</p>
+                <p className="text-xs text-[#999999] font-normal border-t border-gray-100 pt-3">{product.price}</p>
               </div>
             </div>
           </motion.div>

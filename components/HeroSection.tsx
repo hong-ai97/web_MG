@@ -139,7 +139,7 @@ const HeroSection: React.FC = () => {
                   { label: '보험계약 대출', imgSrc: '/assets/quick-icon-5.png', hoverImgSrc: '/assets/quick-icon-5-hover.png' },
                 ].map((item, idx) => (
                   <div key={idx} className="flex flex-col items-center justify-center gap-2 cursor-pointer group">
-                    <div className="w-[52px] h-[52px] relative flex items-center justify-center">
+                    <div className="w-[52px] h-[52px] relative flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-1">
                       <img
                         src={item.imgSrc}
                         alt={item.label}
