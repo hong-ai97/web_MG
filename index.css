@@ -2,3 +2,31 @@
     background: linear-gradient(135deg, #89D5F7, #2FA5E9, #1D8ED3);
     background-size: 100% 100%;
 }
+
+@keyframes tongtong {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    10% {
+        transform: translateY(-8px);
+    }
+
+    20% {
+        transform: translateY(0);
+    }
+
+    30% {
+        transform: translateY(-4px);
+    }
+
+    40% {
+        transform: translateY(0);
+    }
+}
+
+.animate-tongtong {
+    animation: tongtong 2.5s infinite ease-in-out;
+}

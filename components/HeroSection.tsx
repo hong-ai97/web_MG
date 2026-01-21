@@ -70,16 +70,19 @@ const HeroSection: React.FC = () => {
             <div className="bg-white rounded-[32px] p-8 flex flex-col items-center justify-center relative shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 border border-gray-100/50 text-center h-full">
               <h2 className="text-xl md:text-[22px] font-bold text-gray-800 leading-snug mb-6 mt-6">
                 로그인 후 모든 서비스를<br />
-                <span className="text-gray-900">이용해보세요!</span>
+                <span className="text-gray-900">이용해보세요! 👋</span>
               </h2>
 
               {/* Keep existing login content */}
               <div className="flex justify-center gap-2 w-full mb-10 px-2">
-                <button className="w-[154px] h-[48px] bg-[#174291] hover:bg-black text-white rounded-[8px] flex flex-col md:flex-row items-center justify-center gap-2 transition-all shadow-md hover:-translate-y-1 active:scale-[0.98] group">
+                <button className="w-[154px] h-[48px] bg-[#174291] hover:bg-black text-white rounded-[8px] flex flex-col md:flex-row items-center justify-center gap-2 transition-all shadow-md hover:-translate-y-1 active:scale-[0.98] group animate-tongtong">
                   <User className="w-5 h-5 opacity-90 group-hover:scale-110 transition-transform" strokeWidth={2.5} />
                   <span className="font-bold text-[15px]">개인회원</span>
                 </button>
-                <button className="w-[154px] h-[48px] bg-[#174291] hover:bg-black text-white rounded-[8px] flex flex-col md:flex-row items-center justify-center gap-2 transition-all shadow-md hover:-translate-y-1 active:scale-[0.98] group">
+                <button
+                  className="w-[154px] h-[48px] bg-[#174291] hover:bg-black text-white rounded-[8px] flex flex-col md:flex-row items-center justify-center gap-2 transition-all shadow-md hover:-translate-y-1 active:scale-[0.98] group animate-tongtong"
+                  style={{ animationDelay: '0.15s' }}
+                >
                   <Building2 className="w-5 h-5 opacity-90 group-hover:scale-110 transition-transform" strokeWidth={2.5} />
                   <span className="font-bold text-[15px]">법인회원</span>
                 </button>

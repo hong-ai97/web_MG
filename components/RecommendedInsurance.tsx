@@ -67,6 +67,7 @@ const RecommendedInsurance: React.FC = () => {
         {/* Card 1: Future (Vibrant Green) */}
         <motion.div className="h-full" variants={itemVariants}>
           <div className="bg-[#16AA6A] rounded-[24px] pl-10 py-10 pr-[56px] relative overflow-hidden group transition-all hover:shadow-lg h-full">
+
             <div className="relative z-10 flex flex-col justify-between h-full min-h-[220px]">
               <div>
                 <h3 className="text-2xl font-bold text-white mb-2 leading-tight break-keep">
@@ -93,6 +94,7 @@ const RecommendedInsurance: React.FC = () => {
         {/* Card 2: Health (Vibrant Blue) */}
         <motion.div className="h-full" variants={itemVariants}>
           <div className="bg-[#2FA4E8] rounded-[24px] pl-10 py-10 pr-[56px] relative overflow-hidden group transition-all hover:shadow-lg h-full">
+
             <div className="relative z-10 flex flex-col justify-between h-full min-h-[220px]">
               <div>
                 <h3 className="text-2xl font-bold text-white mb-2 leading-tight break-keep">
