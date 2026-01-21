@@ -25,21 +25,26 @@ const HeroSection: React.FC = () => {
                 className="absolute right-[5%] top-1/2 -translate-y-1/2 w-[40%] lg:w-[35%] object-contain z-10"
               />
 
-              <div className="relative z-20 h-full flex flex-col justify-start px-8 md:px-14 pt-16 md:pt-20">
+              <div className="relative z-20 h-full flex flex-col justify-start px-8 md:px-14 pt-[56px]">
+                <span className="w-fit px-3 py-1 rounded-full border border-white text-white text-[13px] font-bold mb-3 tracking-wide">
+                  MG새마을금고
+                </span>
                 <h1 className="text-3xl md:text-[40px] font-bold text-white leading-tight tracking-tight drop-shadow-sm mb-4 break-keep flex flex-col gap-[4px]">
                   <span>온라인에서 간편하게</span>
                   <span className="text-white">조회하는 새마을금고</span>
                 </h1>
 
-                <p className="text-blue-50 text-base md:text-lg font-medium opacity-90 leading-relaxed">
+                <p className="text-[#ffffff] text-base md:text-lg font-medium leading-relaxed">
                   언제나 곁에서 힘이되는 든든한 파트너,<br />
                   MG새마을금고와 함께하세요
                 </p>
 
                 <div className="mt-[64px]">
-                  <button className="flex items-center gap-2 bg-white text-[#1D8ED3] font-bold px-6 h-12 rounded-full w-fit transition-all hover:-translate-y-0.5 group/btn border border-white">
-                    <span className="text-base">바로가기</span>
-                    <ChevronRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                  <button className="flex items-center gap-[20px] bg-white pl-[20px] pr-1.5 h-[48px] rounded-full transition-all hover:-translate-y-0.5 group/btn">
+                    <span className="text-[#174291] font-bold text-[18px] tracking-tight">바로가기</span>
+                    <div className="w-[36px] h-[36px] bg-[#174291] rounded-full flex items-center justify-center group-hover/btn:bg-[#113170] transition-colors">
+                      <ChevronRight className="w-5 h-5 text-white" strokeWidth={1.5} />
+                    </div>
                   </button>
                 </div>
               </div>
@@ -67,54 +72,63 @@ const HeroSection: React.FC = () => {
             duration={1.5} // Slower duration
             width="100%"
           >
-            <div className="bg-white rounded-[32px] p-8 flex flex-col items-center justify-center relative shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 border border-gray-100/50 text-center h-full">
-              <h2 className="text-xl md:text-[22px] font-bold text-gray-800 leading-snug mb-6 mt-6">
-                로그인 후 모든 서비스를<br />
-                <span className="text-gray-900">이용해보세요! 👋</span>
-              </h2>
+            <div className="bg-white rounded-[32px] flex flex-col justify-between relative shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 border border-gray-100/50 text-center h-full overflow-hidden">
 
-              {/* Keep existing login content */}
-              <div className="flex justify-center gap-2 w-full mb-10 px-2">
-                <button className="w-[154px] h-[48px] bg-[#174291] hover:bg-black text-white rounded-[8px] flex flex-col md:flex-row items-center justify-center gap-2 transition-all shadow-md hover:-translate-y-1 active:scale-[0.98] group animate-tongtong">
-                  <User className="w-5 h-5 opacity-90 group-hover:scale-110 transition-transform" strokeWidth={2.5} />
-                  <span className="font-bold text-[15px]">개인회원</span>
-                </button>
-                <button
-                  className="w-[154px] h-[48px] bg-[#174291] hover:bg-black text-white rounded-[8px] flex flex-col md:flex-row items-center justify-center gap-2 transition-all shadow-md hover:-translate-y-1 active:scale-[0.98] group animate-tongtong"
-                  style={{ animationDelay: '0.15s' }}
-                >
-                  <Building2 className="w-5 h-5 opacity-90 group-hover:scale-110 transition-transform" strokeWidth={2.5} />
-                  <span className="font-bold text-[15px]">법인회원</span>
-                </button>
+              {/* Top: Login Prompt (Expanded Area) */}
+              <div className="flex-1 flex flex-col justify-start pt-[56px] px-8 w-full">
+                {/* Text Block */}
+                <div className="w-full text-left flex flex-col gap-1 pb-1 pl-1">
+                  <p className="text-[#111111] font-medium text-[18px] leading-snug">
+                    안전하고 든든한 보장<br />
+                    MG새마을금고에서
+                  </p>
+                  <h2 className="text-[30px] font-bold text-[#111111] leading-tight mt-[8px] tracking-tight">
+                    로그인해 주세요!
+                  </h2>
+                </div>
+
+                {/* Icon Block - Right Aligned, Below Text */}
+                <div className="w-full flex justify-end pr-2 -mt-[48px]">
+                  <div className="relative w-[104px] h-[104px] animate-floating">
+                    <img src="/assets/login-lock-3d.png" alt="Login Icon" className="w-full h-full object-contain" />
+                  </div>
+                </div>
+
+                {/* Buttons - 40px margin from icon */}
+                <div className="flex justify-center gap-1 w-full px-1 mt-8">
+                  <button className="w-full h-[48px] bg-[#174291] hover:bg-[#113170] text-white rounded-[8px] flex items-center justify-center gap-2 transition-all shadow-md hover:-translate-y-0.5 active:scale-[0.98] group flex-1">
+                    <User className="w-5 h-5 opacity-90" strokeWidth={2.5} />
+                    <span className="font-bold text-[15px]">개인회원</span>
+                  </button>
+                  <button className="w-full h-[48px] bg-[#174291] hover:bg-[#113170] text-white rounded-[8px] flex items-center justify-center gap-2 transition-all shadow-md hover:-translate-y-0.5 active:scale-[0.98] group flex-1">
+                    <Building2 className="w-5 h-5 opacity-90" strokeWidth={2.5} />
+                    <span className="font-bold text-[15px]">법인회원</span>
+                  </button>
+                </div>
               </div>
 
-              <div className="w-[80%] h-px bg-gray-100 mb-8"></div>
-
-              <div className="w-full">
-                <h3 className="text-base md:text-lg font-bold text-[#333333] leading-snug mb-8">
-                  로그인 없이 이용 가능해요.
-                </h3>
-
-                <div className="flex justify-center gap-4 px-1">
-                  <div className="flex flex-col items-center gap-2.5 group cursor-pointer w-24">
-                    <div className="w-[52px] h-[52px] flex items-center justify-center">
-                      <img src="/assets/login-icon-1.png" alt="개인정보동의" className="w-[52px] h-[52px] object-contain" />
+              {/* Bottom: Utilities (Reduced Area, Gray Background) */}
+              <div className="w-full bg-[#EFF8FF] py-8 px-4">
+                <div className="flex justify-center gap-6">
+                  <div className="flex flex-col items-center gap-2 group cursor-pointer w-20">
+                    <div className="w-[44px] h-[44px] flex items-center justify-center">
+                      <img src="/assets/login-util-icon-1.png" alt="개인정보동의" className="w-full h-full object-contain" />
                     </div>
-                    <span className="text-[14px] font-medium text-[#333333] group-hover:text-gray-900 transition-colors whitespace-nowrap">개인정보동의</span>
+                    <span className="text-[13px] font-medium text-[#444444] group-hover:text-black transition-colors whitespace-nowrap">개인정보동의</span>
                   </div>
 
-                  <div className="flex flex-col items-center gap-2.5 group cursor-pointer w-24">
-                    <div className="w-[52px] h-[52px] flex items-center justify-center">
-                      <img src="/assets/login-icon-2.png" alt="보험증권 사서함" className="w-[52px] h-[52px] object-contain" />
+                  <div className="flex flex-col items-center gap-2 group cursor-pointer w-20">
+                    <div className="w-[44px] h-[44px] flex items-center justify-center">
+                      <img src="/assets/login-util-icon-2.png" alt="보험증권 사서함" className="w-full h-full object-contain" />
                     </div>
-                    <span className="text-[14px] font-medium text-[#333333] group-hover:text-gray-900 transition-colors whitespace-nowrap">보험증권 사서함</span>
+                    <span className="text-[13px] font-medium text-[#444444] group-hover:text-black transition-colors whitespace-nowrap">보험증권 사서함</span>
                   </div>
 
-                  <div className="flex flex-col items-center gap-2.5 group cursor-pointer w-24">
-                    <div className="w-[52px] h-[52px] flex items-center justify-center">
-                      <img src="/assets/login-icon-3.png" alt="증권 발급 확인" className="w-[52px] h-[52px] object-contain" />
+                  <div className="flex flex-col items-center gap-2 group cursor-pointer w-20">
+                    <div className="w-[44px] h-[44px] flex items-center justify-center">
+                      <img src="/assets/login-util-icon-3.png" alt="증권 발급 확인" className="w-full h-full object-contain" />
                     </div>
-                    <span className="text-[14px] font-medium text-[#333333] group-hover:text-gray-900 transition-colors whitespace-nowrap">증권 발급 확인</span>
+                    <span className="text-[13px] font-medium text-[#444444] group-hover:text-black transition-colors whitespace-nowrap">증권 발급 확인</span>
                   </div>
                 </div>
               </div>
