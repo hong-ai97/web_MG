@@ -1,33 +1,43 @@
+
 import React from 'react';
-import { ChevronRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 const BannerSection: React.FC = () => {
   return (
-    <section className="max-w-[1280px] mx-auto px-4">
+    <section className="max-w-[1600px] mx-auto">
       <ScrollReveal className="w-full" delay={0.3}>
-        <div className="relative rounded-[24px] overflow-hidden group cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.1)] transition-all duration-500 min-h-[320px] flex items-center">
+        <div className="relative rounded-[32px] overflow-hidden group cursor-pointer shadow-[0_4px_30px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all duration-700 min-h-[520px] flex items-center">
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img
               src="/assets/images/jeju_bg_flipped.png"
               alt="Jeju Training Center"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
             />
           </div>
 
-          {/* Dim Overlay (40%) */}
-          <div className="absolute inset-0 z-0 bg-black/40 transition-colors duration-500 group-hover:bg-black/30"></div>
+          {/* Dim Overlay (Darker for better text legibility as seen in image) */}
+          <div className="absolute inset-0 z-0 bg-black/50 transition-colors duration-500 group-hover:bg-black/40"></div>
 
-          <div className="flex flex-col md:flex-row items-center justify-between px-8 md:px-16 py-12 text-white relative z-10 w-full">
-            {/* Left Content */}
-            <div className="flex flex-col items-start max-w-2xl">
-              <h2 className="text-2xl md:text-4xl font-bold mb-3 tracking-tight leading-[1.6] drop-shadow-sm">제주 연수원에서의<br />특별한 휴식</h2>
-              <p className="text-white/90 text-sm md:text-base mb-8 font-medium leading-relaxed drop-shadow-sm break-keep">
-                제주에의 휴식, 다양한 부대시설을 갖추고 있는 고품격 휴양형 연수원 입니다.
-              </p>
-              <div className="flex items-center gap-2 font-bold text-sm bg-white text-gray-900 w-fit px-5 py-3 rounded-full hover:bg-gray-50 transition-all cursor-pointer">
-                예약하기 <ChevronRight className="w-4 h-4" />
+          {/* Content Area */}
+          <div className="relative z-10 w-full px-20 py-16 text-white">
+            <div className="flex flex-col items-start max-w-3xl">
+              {/* Category Label */}
+              <span className="text-[14px] font-bold tracking-[0.2em] mb-6 opacity-80 uppercase">Training Center</span>
+
+              {/* Main Heading: Expanded and polished */}
+              <h2 className="text-[36px] font-bold mb-10 tracking-tight leading-[1.3] drop-shadow-md break-keep">
+                MG새마을금고 제주 연수원에서 즐기는<br />
+                특별한 휴식과 진정한 쉼의 가치
+              </h2>
+
+              {/* Button: Matches the "자세히 보기 ->" style in the image */}
+              <div className="flex items-center gap-4 group/btn">
+                <span className="text-[16px] font-bold tracking-tight opacity-80 group-hover/btn:opacity-100 transition-opacity">자세히 보기</span>
+                <div className="w-10 h-10 rounded-full border border-white/40 flex items-center justify-center transition-all group-hover/btn:bg-white group-hover/btn:border-white group-hover/btn:text-gray-900">
+                  <ArrowRight className="w-5 h-5" />
+                </div>
               </div>
             </div>
           </div>
