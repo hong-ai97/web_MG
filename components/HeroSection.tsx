@@ -49,7 +49,7 @@ const HeroSection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="absolute bottom-8 right-8 z-30 flex items-center gap-4 bg-black/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 shadow-sm">
+              <div className="absolute bottom-8 right-8 z-30 flex items-center gap-4 bg-black/10 backdrop-blur-md px-4 py-2 rounded-full">
                 <div className="flex items-center gap-2 text-white/90 text-xs font-semibold">
                   <span>02</span>
                   <span className="w-8 h-[1px] bg-white/30"></span>
