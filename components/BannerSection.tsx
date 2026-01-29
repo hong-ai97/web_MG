@@ -7,7 +7,7 @@ const BannerSection: React.FC = () => {
   return (
     <section className="max-w-[1600px] mx-auto">
       <ScrollReveal className="w-full" delay={0.3}>
-        <div className="relative rounded-[32px] overflow-hidden group cursor-pointer shadow-[0_4px_30px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all duration-700 min-h-[520px] flex items-center">
+        <div className="relative rounded-[32px] overflow-hidden group cursor-pointer transition-all duration-700 min-h-[520px] flex items-center">
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img
@@ -18,7 +18,7 @@ const BannerSection: React.FC = () => {
           </div>
 
           {/* Dim Overlay (Darker for better text legibility as seen in image) */}
-          <div className="absolute inset-0 z-0 bg-black/50 transition-colors duration-500 group-hover:bg-black/40"></div>
+          <div className="absolute inset-0 z-0 bg-black/50 transition-colors duration-500 group-hover:bg-black/60"></div>
 
           {/* Content Area */}
           <div className="relative z-10 w-full px-20 py-16 text-white">
@@ -27,7 +27,7 @@ const BannerSection: React.FC = () => {
               <span className="text-[14px] font-bold tracking-[0.2em] mb-6 opacity-80 uppercase">Training Center</span>
 
               {/* Main Heading: Expanded and polished */}
-              <h2 className="text-[36px] font-bold mb-10 tracking-tight leading-[1.3] drop-shadow-md break-keep">
+              <h2 className="text-[36px] font-bold mb-[104px] tracking-tight leading-[1.3] break-keep">
                 MG새마을금고 제주 연수원에서 즐기는<br />
                 특별한 휴식과 진정한 쉼의 가치
               </h2>

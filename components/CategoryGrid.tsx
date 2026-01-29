@@ -76,7 +76,7 @@ const CategoryGrid: React.FC = () => {
                 px-5 py-2.5 rounded-full text-[15px] font-bold transition-all border
                 ${activeTab === category.id
                   ? 'bg-[#111111] border-[#111111] text-white'
-                  : 'bg-[#F8F9FA] border-[#EEEEEE] text-[#999999] hover:border-gray-300'
+                  : 'bg-transparent border-[#111111] text-[#111111] hover:bg-black/5'
                 }
               `}
             >
@@ -90,24 +90,24 @@ const CategoryGrid: React.FC = () => {
       <motion.div className="grid grid-cols-2 lg:grid-cols-5 gap-4" variants={contentVariants}>
         {activeProducts.map((product, idx) => (
           <motion.div key={idx} variants={itemVariants} className="group">
-            <div className="bg-white rounded-[32px] p-8 aspect-square border border-transparent hover:border-blue-100 shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-300 cursor-pointer flex flex-col justify-between relative overflow-hidden">
+            <div className="bg-white rounded-[32px] p-8 aspect-square border border-transparent hover:bg-[#174291] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] transition-all duration-300 cursor-pointer flex flex-col justify-between relative overflow-hidden">
 
               <div className="z-10 w-full relative">
                 {/* Tags */}
                 <div className="flex gap-1.5 mb-5">
-                  <span className="bg-blue-50 text-[#2FA5E9] text-[13px] font-extrabold px-3 py-1 rounded-full">
+                  <span className="bg-blue-50 text-[#2FA5E9] text-[13px] font-extrabold px-3 py-1 rounded-full group-hover:bg-white/20 group-hover:text-white transition-colors">
                     {product.tag}
                   </span>
                   {product.isHot && (
-                    <span className="bg-sky-100 text-sky-600 text-[13px] font-extrabold px-3 py-1 rounded-full">인기상품</span>
+                    <span className="bg-sky-100 text-sky-600 text-[13px] font-extrabold px-3 py-1 rounded-full group-hover:bg-white/20 group-hover:text-white transition-colors">인기상품</span>
                   )}
                 </div>
 
                 {/* Title & Desc */}
-                <h3 className="text-[22px] font-bold text-gray-900 mb-1 leading-snug group-hover:text-[#2FA5E9] transition-colors break-keep">
+                <h3 className="text-[22px] font-bold text-gray-900 mb-1 leading-snug group-hover:text-white transition-colors break-keep">
                   {product.title}
                 </h3>
-                <p className="text-[16px] text-gray-400 font-medium break-keep leading-relaxed">{product.desc}</p>
+                <p className="text-[16px] text-[#666666] font-medium break-keep leading-relaxed group-hover:text-white/80 transition-colors">{product.desc}</p>
               </div>
 
               {/* Icon - Bottom Right (80*80px) */}

@@ -40,11 +40,14 @@ const HeroSection: React.FC = () => {
                 <div className="w-2 h-2 rounded-full bg-white/30"></div>
               </div>
 
-              {/* Right Content: New Main Visual Image (Full Fit) */}
+              {/* Right Content: New Main Visual Video (Full Fit) */}
               <div className="absolute inset-0 w-full h-full z-10">
-                <img
-                  src="/assets/main-hero-new.png"
-                  alt="Main Hero Visual"
+                <video
+                  src="/assets/main_video.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   className="w-full h-full object-cover"
                 />
               </div>

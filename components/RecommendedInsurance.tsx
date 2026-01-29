@@ -34,7 +34,7 @@ const RecommendedInsurance: React.FC = () => {
 
         {/* Left: Title & Navigation Area */}
         <div className="lg:w-[350px] shrink-0 pt-2">
-          <h2 className="text-[44px] font-bold text-[#111111] leading-[1.25] mb-12 tracking-tight whitespace-nowrap">
+          <h2 className="text-[40px] font-bold text-[#111111] leading-[1.25] mb-12 tracking-tight whitespace-nowrap">
             고객님께<br />
             꼭 필요한 상품<br />
             추천해 드려요

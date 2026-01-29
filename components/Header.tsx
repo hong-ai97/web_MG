@@ -17,7 +17,7 @@ const Header: React.FC = () => {
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 overflow-hidden ${isScrolled ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100 bg-transparent'
       }`}>
-      <div className="max-w-[1600px] mx-auto px-4 h-[72px] flex items-center justify-between">
+      <div className="max-w-[1600px] mx-auto px-4 h-[88px] pt-4 flex items-center justify-between">
 
         {/* Left: Logo & Pill Toggle */}
         <div className="flex items-center gap-8">
