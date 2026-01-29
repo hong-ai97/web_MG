@@ -17,7 +17,7 @@ const HeroSection: React.FC = () => {
             delay={0}
             duration={1.5}
           >
-            <div className="relative bg-[#018BEE] rounded-[32px] overflow-hidden h-full flex flex-col justify-between py-12 px-14 shadow-[0_20px_40px_rgba(1,139,238,0.2)]">
+            <div className="relative bg-[#018BEE] rounded-[32px] overflow-hidden h-full flex flex-col justify-between py-16 px-14 shadow-[0_20px_40px_rgba(1,139,238,0.2)]">
               {/* Top: Title Content */}
               <div className="relative z-20 w-1/2">
                 <span className="w-fit px-3 py-1 rounded-full border border-white/30 text-white/90 text-[13px] font-bold mb-4 inline-block">
