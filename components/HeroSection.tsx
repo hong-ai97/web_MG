@@ -40,9 +40,9 @@ const HeroSection: React.FC = () => {
                 </p>
 
                 <div className="mt-[64px]">
-                  <button className="flex items-center gap-[20px] bg-white pl-[20px] pr-1.5 h-[48px] rounded-full transition-all hover:-translate-y-0.5 group/btn">
-                    <span className="text-[#174291] font-bold text-[18px] tracking-tight">바로가기</span>
-                    <div className="w-[36px] h-[36px] bg-[#174291] rounded-full flex items-center justify-center group-hover/btn:bg-[#113170] transition-colors">
+                  <button className="flex items-center gap-[16px] bg-white pl-[20px] pr-1.5 h-[44px] rounded-full transition-all hover:-translate-y-0.5 group/btn">
+                    <span className="text-[#174291] font-bold text-[16px] tracking-tight">바로가기</span>
+                    <div className="w-[32px] h-[32px] bg-[#174291] rounded-full flex items-center justify-center group-hover/btn:bg-[#113170] transition-colors">
                       <ChevronRight className="w-5 h-5 text-white" strokeWidth={1.5} />
                     </div>
                   </button>
