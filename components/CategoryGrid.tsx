@@ -47,6 +47,7 @@ const itemVariants = {
 
 const CategoryGrid: React.FC = () => {
   const [activeTab, setActiveTab] = useState(CATEGORIES[0].id);
+  const [hoveredTab, setHoveredTab] = useState<number | null>(null);
   const activeProducts = getMockProductsForCategory(activeTab, CATEGORIES.find(c => c.id === activeTab)?.label || '');
 
   return (
@@ -68,21 +69,30 @@ const CategoryGrid: React.FC = () => {
 
         {/* Tabs: Pill Style (Chip) */}
         <motion.div className="flex flex-wrap gap-2 mt-8 lg:mt-0" variants={headerVariants}>
-          {CATEGORIES.map((category) => (
-            <button
-              key={category.id}
-              onClick={() => setActiveTab(category.id)}
-              className={`
-                px-5 py-2.5 rounded-full text-[15px] font-bold transition-all border
-                ${activeTab === category.id
-                  ? 'bg-[#111111] border-[#111111] text-white'
-                  : 'bg-transparent border-[#111111] text-[#111111] hover:bg-black/5'
-                }
-              `}
-            >
-              {category.label}
-            </button>
-          ))}
+          {CATEGORIES.map((category) => {
+            const isActive = activeTab === category.id;
+            const isHovered = hoveredTab === category.id;
+            // Show as black if hovered OR if (active AND nothing else is hovered)
+            const showAsActive = isHovered || (isActive && hoveredTab === null);
+
+            return (
+              <button
+                key={category.id}
+                onClick={() => setActiveTab(category.id)}
+                onMouseEnter={() => setHoveredTab(category.id)}
+                onMouseLeave={() => setHoveredTab(null)}
+                className={`
+                  px-5 py-2.5 rounded-full text-[15px] font-bold transition-all border duration-200
+                  ${showAsActive
+                    ? 'bg-[#111111] border-[#111111] text-white'
+                    : 'bg-transparent border-[#111111] text-[#111111]'
+                  }
+                `}
+              >
+                {category.label}
+              </button>
+            );
+          })}
         </motion.div>
       </div>
 

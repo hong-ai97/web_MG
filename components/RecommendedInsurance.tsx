@@ -41,16 +41,16 @@ const RecommendedInsurance: React.FC = () => {
           </h2>
 
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2 text-sm font-bold py-2">
-              <span className="text-gray-900">01</span>
-              <span className="text-gray-200">/</span>
-              <span className="text-gray-400">08</span>
+            <div className="flex items-center gap-3 text-sm font-bold py-2">
+              <span className="text-[#111111] text-[16px]">01</span>
+              <span className="text-[#EEEEEE]">/</span>
+              <span className="text-[#999999] text-[16px]">08</span>
             </div>
             <div className="flex gap-2">
-              <button className="w-12 h-12 rounded-full flex items-center justify-center text-white bg-[#333] hover:bg-black transition-all">
+              <button className="w-12 h-12 rounded-full flex items-center justify-center border border-[#111111] text-[#111111] bg-transparent hover:bg-[#111111] hover:text-white transition-all">
                 <ChevronLeft className="w-6 h-6" />
               </button>
-              <button className="w-12 h-12 rounded-full bg-[#333] flex items-center justify-center text-white hover:bg-black transition-all">
+              <button className="w-12 h-12 rounded-full flex items-center justify-center border border-[#111111] text-[#111111] bg-transparent hover:bg-[#111111] hover:text-white transition-all">
                 <ChevronRight className="w-6 h-6" />
               </button>
             </div>
